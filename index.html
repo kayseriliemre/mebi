@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hesaplama</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input {
+            padding: 5px;
+            margin: 5px;
+        }
+        button {
+            padding: 8px;
+            cursor: pointer;
+        }
+        #sonuc {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>Hesaplama</h2>
+    
+    <input type="number" id="sayi1" placeholder="Bir sayı girin">
+    <input type="number" id="sayi2" placeholder="Bir sayı girin">
+    
+    <button onclick="hesapla()">Hesapla</button>
+
+    <p id="sonuc"></p>
+
+    <script>
+        function hesapla() {
+            let a = parseInt(document.getElementById("sayi1").value);
+            let b = parseInt(document.getElementById("sayi2").value);
+            
+            if (isNaN(a) || isNaN(b)) {
+                document.getElementById("sonuc").innerText = "";
+                return;
+            }
+
+            if (b === 0) {
+                document.getElementById("sonuc").innerText = "Sonuç = Hata (b sıfır olamaz!)";
+                return;
+            }
+
+            let kalan = a % b;
+            document.getElementById("sonuc").innerText = `Sonuç = ${kalan}`;
+        }
+    </script>
+</body>
+</html>
