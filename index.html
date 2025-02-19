@@ -1,101 +1,101 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hesaplama</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f4f4f4;
-        }
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Hesaplama</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			text-align: center;
+			margin: 0;
+			padding: 20px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+			background-color: #f4f4f4;
+		}
 
-        .container {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            max-width: 90%;
-            width: 300px;
-        }
+		.container {
+			background: white;
+			padding: 20px;
+			border-radius: 10px;
+			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+			max-width: 90%;
+			width: 300px;
+		}
 
-        h2 {
-            margin-bottom: 20px;
-        }
+		h2 {
+			margin-bottom: 20px;
+		}
 
-        input {
-            padding: 10px;
-            margin: 5px 0;
-            width: 100%;
-            box-sizing: border-box;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
+		input {
+			padding: 10px;
+			margin: 5px 0;
+			width: 100%;
+			box-sizing: border-box;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+		}
 
-        button {
-            padding: 10px;
-            width: 100%;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 10px;
-        }
+		button {
+			padding: 10px;
+			width: 100%;
+			background-color: #007bff;
+			color: white;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			margin-top: 10px;
+		}
 
-        button:hover {
-            background-color: #0056b3;
-        }
+		button:hover {
+			background-color: #0056b3;
+		}
 
-        #sonuc {
-            margin-top: 15px;
-            font-weight: bold;
-            min-height: 20px;
-        }
-    </style>
+		#sonuc {
+			margin-top: 15px;
+			font-weight: bold;
+			min-height: 20px;
+		}
+	</style>
 </head>
 <body>
 
-    <div class="container">
-        <h2>Hesaplama</h2>
-        
-        <input type="number" id="sayi1" placeholder="Bir tam sayı girin">
-        <input type="number" id="sayi2" placeholder="Bir tam sayı girin">
-        
-        <button onclick="hesapla()">Hesapla</button>
+	<div class="container">
+		<h2>Hesaplama</h2>
+		
+		<input type="number" id="sayi1" placeholder="Bir sayı girin">
+		<input type="number" id="sayi2" placeholder="Bir sayı girin">
+		
+		<button onclick="hesapla()">Hesapla</button>
 
-        <p id="sonuc"></p>
-    </div>
+		<p id="sonuc"></p>
+	</div>
 
-    <script>
-        function hesapla() {
-            let a = Number(document.getElementById("sayi1").value);
-            let b = Number(document.getElementById("sayi2").value);
-            let sonucElement = document.getElementById("sonuc");
+	<script>
+		function hesapla() {
+			let a = Number(document.getElementById("sayi1").value);
+			let b = Number(document.getElementById("sayi2").value);
+			let sonucElement = document.getElementById("sonuc");
 
-            // Sayı girilip girilmediğini kontrol et
-            if (document.getElementById("sayi1").value === "" || document.getElementById("sayi2").value === "") {
-                sonucElement.innerText = "Lütfen iki sayı girin.";
-                return;
-            }
+			// Sayı girilip girilmediğini kontrol et
+			if (document.getElementById("sayi1").value === "" || document.getElementById("sayi2").value === "") {
+				sonucElement.innerText = "Lütfen iki sayı girin.";
+				return;
+			}
 
-            // Bölme hatasını önle
-            if (b === 0) {
-                sonucElement.innerText = "Hata: Bölme sıfır ile yapılamaz!";
-                return;
-            }
+			// Bölme hatasını önle
+			if (b === 0) {
+				sonucElement.innerText = "Hata: Bölme sıfır ile yapılamaz!";
+				return;
+			}
 
-            let kalan = a % b;
-            sonucElement.innerText = Sonuç = ${kalan};
-        }
-    </script>
+			let kalan = a % b;
+			sonucElement.innerText = `Sonuç = ${kalan}`;
+		}
+	</script>
 
 </body>
 </html>
